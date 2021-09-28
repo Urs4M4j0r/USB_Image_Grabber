@@ -1,5 +1,7 @@
 # USB_Image_Grabber
-A program designed to collect all the images in a chosen directory. NOTE: THIS PROGRAM EXECUTES A MOUSE WIGGLER FUNCTION TO STOP YOUR PC FROM SLEEPING WHILE COLLECTING IMAGES. AS SUCH THIS IS INTENDED TO BE A 'SET AND FORGET' PROGRAM, DO NOT PLAN ON USING YOUR PC FOR THE DURATION OF ITS EXECUTION. I WILL ADD A COMMENT IN THE CODE IF YOU WOULD LIKE TO DISABLE THIS FUCTION.
+A program designed to collect all the images in a chosen directory. 
+
+NOTE: THIS PROGRAM EXECUTES A MOUSE WIGGLER FUNCTION TO STOP YOUR PC FROM SLEEPING WHILE COLLECTING IMAGES. AS SUCH THIS IS INTENDED TO BE A 'SET AND FORGET' PROGRAM, DO NOT PLAN ON USING YOUR PC FOR THE DURATION OF ITS EXECUTION. I WILL ADD A COMMENT IN THE CODE IF YOU WOULD LIKE TO DISABLE THIS FUCTION.
 
 # What is this?
 I created this program based on commercially available products designed to aid in collecting pictures off a personal computer. It uses a windows batch file as well as python venv 3.8.10. Due to the use of a batch file for added simplicity as well as relying on a windows version of the python interpreter it was written for use on windows only.
