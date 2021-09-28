@@ -5,6 +5,10 @@ import time
 from tkinter import Tk, filedialog
 import pyautogui
 
+#Sleep duration
+#Adjust this to be slightly higher if you run into an 'out of memory' type error
+sleep_time = 0.3
+
 def copy(command):
     os.popen(command)
 
@@ -15,11 +19,11 @@ def move_mouse(count):
         pyautogui.moveRel(0, 25, duration = 0.25)
     else:
         pyautogui.moveRel(0, -25, duration = 0.25)
-    time.sleep(0.25)
+    time.sleep(sleep_time)
     #END COMMENT OUT
     
     #ALSO UNCOMMENT THE FOLLOWING TWO LINES
-    #time.sleep(0.5)
+    #time.sleep(sleep_time)
     #pass
     
 
