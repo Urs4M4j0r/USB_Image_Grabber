@@ -10,11 +10,17 @@ def copy(command):
 
 #THIS IS THE MOUSE WIGGLER FUNCTION
 def move_mouse(count):
+    #TO DISABLE MOUSE WIGGLE COMMENT OUT THE FOLLOWING CODE
     if count % 2 == 0:
         pyautogui.moveRel(0, 25, duration = 0.25)
     else:
         pyautogui.moveRel(0, -25, duration = 0.25)
     time.sleep(0.25)
+    #END COMMENT OUT
+    
+    #ALSO UNCOMMENT THE FOLLOWING TWO LINES
+    #time.sleep(0.5)
+    #pass
     
 
 root = tk.Tk()
@@ -54,8 +60,7 @@ for count in range(0,len(files1)):
     command = 'copy \"' + files1[count] + '\" \"' + path + '/images/' + filesnew1[count] + '\"'
     copy(command)
     print(filesnew1[count])
-    
-    #COMMENT OUT THIS LINE TO DISABLE MOUSE WIGGLER
+    #MOUSE WIGGLER CALL
     move_mouse(count)
     
 gc.collect()
@@ -65,8 +70,7 @@ for count in range(0,len(files2)):
     command = 'copy \"' + files2[count] + '\" \"' + path + '/images/' + filesnew2[count] + '\"'
     copy(command)
     print(filesnew2[count])
-    
-    #COMMENT OUT THIS LINE TO DISABLE MOUSE WIGGLER
+    #MOUSE WIGGLER CALL
     move_mouse(count)
 
 gc.collect()
@@ -76,8 +80,7 @@ for count in range(0,len(files3)):
     command = 'copy \"' + files3[count] + '\" \"' + path + '/images/' + filesnew3[count] + '\"'
     copy(command)
     print(filesnew3[count])
-    
-    #COMMENT OUT THIS LINE TO DISABLE MOUSE WIGGLER
+    #MOUSE WIGGLER CALL
     move_mouse(count)
     
 print('\n\n')
