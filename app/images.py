@@ -5,15 +5,26 @@ import time
 from tkinter import Tk, filedialog
 import pyautogui
 
+#Sleep duration
+#Adjust this to be slightly higher if you run into an 'out of memory' type error
+sleep_time = 0.3
+
 def copy(command):
     os.popen(command)
 
+#THIS IS THE MOUSE WIGGLER FUNCTION
 def move_mouse(count):
+    #TO DISABLE MOUSE WIGGLE COMMENT OUT THE FOLLOWING CODE
     if count % 2 == 0:
         pyautogui.moveRel(0, 25, duration = 0.25)
     else:
         pyautogui.moveRel(0, -25, duration = 0.25)
-    time.sleep(0.25)
+    time.sleep(sleep_time)
+    #END COMMENT OUT
+    
+    #ALSO UNCOMMENT THE FOLLOWING TWO LINES
+    #time.sleep(sleep_time)
+    #pass
     
 
 root = tk.Tk()
@@ -45,14 +56,15 @@ for r,d,f in os.walk(base_path):
             files3.append(os.path.join(r, file))
             filesnew3.append(file)
 
-            
+#tHIS MOVES YOUR CURSOR TO A STANDARD POSITION TO ENSURE THE WIGGLE DOES NOT COLLIDE WITH THE EDGE OF YOUR DISPLAY, WHICH THROWS AN ERROR           
 pyautogui.moveTo(300, 300, 1)
+
 count = 0
-pyautogui.moveTo(250, 250, duration = 1)
 for count in range(0,len(files1)):
     command = 'copy \"' + files1[count] + '\" \"' + path + '/images/' + filesnew1[count] + '\"'
     copy(command)
     print(filesnew1[count])
+    #MOUSE WIGGLER CALL
     move_mouse(count)
     
 gc.collect()
@@ -62,6 +74,7 @@ for count in range(0,len(files2)):
     command = 'copy \"' + files2[count] + '\" \"' + path + '/images/' + filesnew2[count] + '\"'
     copy(command)
     print(filesnew2[count])
+    #MOUSE WIGGLER CALL
     move_mouse(count)
 
 gc.collect()
@@ -71,6 +84,7 @@ for count in range(0,len(files3)):
     command = 'copy \"' + files3[count] + '\" \"' + path + '/images/' + filesnew3[count] + '\"'
     copy(command)
     print(filesnew3[count])
+    #MOUSE WIGGLER CALL
     move_mouse(count)
     
 print('\n\n')
